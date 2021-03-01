@@ -29,7 +29,7 @@ void checkStatus({
           result = result + '${garrafa}L ';
           print('------------------------------------');
           print('Usamos as garrafas de: $result');
-          print('Sobrou: $galao');
+          print('Restou: ${galao}L');
           print('------------------------------------');
         }
       }
