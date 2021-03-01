@@ -1,5 +1,11 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+COMO EXECUTAR O PROGRAMA
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+1. Abra o VScode ou algum compilador dart.
+
+2. Abra a pasta do desafio.
+
+3. Verifique se voce tem o plugin do dart instalado no seu VScode.
+
+4. Abra o terminal.
+
+5. Digite "dart run" e siga as instruções em tempo de execução.
