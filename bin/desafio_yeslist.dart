@@ -1,5 +1,8 @@
-import 'package:desafio_yeslist/desafio_yeslist.dart' as desafio_yeslist;
+import 'package:desafio_yeslist/desafio_yeslist.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${desafio_yeslist.calculate()}!');
+  var galao = getGalao();
+  var garrafas = getGarrafas();
+  
+  print('Hello world: ${calculate()}!');
 }

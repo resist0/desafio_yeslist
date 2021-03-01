@@ -1,3 +1,7 @@
 int calculate() {
-  return 6 * 7;
+  return 1 + 2;
 }
+
+double getGalao() {}
+
+int getGarrafas() {}
