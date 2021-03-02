@@ -1,5 +1,34 @@
 import 'dart:io';
-import 'package:meta/meta.dart';
+
+List tentarEncher(double total, List garrafas) {
+  garrafas.sort();
+
+  var sortedGarrafas = garrafas.reversed;
+  var litrosGalao = 0.0;
+  var garrafasUtilizadas = [];
+  var sobra = 0.0;
+
+  for (var garrafa in sortedGarrafas) {
+    if (litrosGalao + garrafa <= total) {
+      litrosGalao += garrafa;
+      garrafasUtilizadas.add(garrafa);
+    }
+  }
+
+  if (litrosGalao != total) {
+    for (var garrafa in sortedGarrafas) {
+      if (garrafasUtilizadas.contains(garrafa)) continue;
+      if (litrosGalao + garrafa > total) {
+        litrosGalao += garrafa;
+        sobra = litrosGalao - total;
+        garrafasUtilizadas.add(garrafa);
+        break;
+      }
+    }
+  }
+
+  return [garrafasUtilizadas, sobra];
+}
 
 double getGalao() {
   print('Insira os litros do galão: ');
@@ -9,30 +38,4 @@ double getGalao() {
 int getGarrafas() {
   print('Insira a quantidade de garrafas: ');
   return int.parse(stdin.readLineSync());
-}
-
-void checkStatus({
-  @required var qnt_garrafa,
-  @required var vol_garrafa,
-  @required var galao,
-  @required var result,
-}) {
-  for (var i = 1; i < qnt_garrafa + 1; i++) {
-    if (galao > 0) {
-      print('Tamanho da garrafa $i em Litros: ');
-      var litros = double.parse(stdin.readLineSync());
-      vol_garrafa.add(litros);
-
-      for (var garrafa in vol_garrafa) {
-        if (galao - garrafa >= 0) {
-          galao = galao - garrafa;
-          result = result + '${garrafa}L ';
-          print('------------------------------------');
-          print('Usamos as garrafas de: $result');
-          print('Restou: ${galao}L');
-          print('------------------------------------');
-        }
-      }
-    }
-  }
 }
