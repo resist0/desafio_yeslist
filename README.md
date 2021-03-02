@@ -8,4 +8,4 @@ COMO EXECUTAR O PROGRAMA
 
 4. Abra o arquivo dentro da pasta bin/desafio_yeslist.dart e executa em modo debug ou então execute pelo proprio terminal
 
-5. Digite "dart run" e siga as instruções em tempo de execução.
+5. O resultado em debug vai aparecer no DEBUG CONSOLE e se executar pelo terminal vai aparecer la mesmo.
