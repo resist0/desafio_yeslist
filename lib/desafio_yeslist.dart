@@ -1,41 +1,31 @@
-import 'dart:io';
+class Challenge {
+  List tentarEncher(int total, List garrafas) {
+    garrafas.sort();
 
-List tentarEncher(double total, List garrafas) {
-  garrafas.sort();
+    var sortedGarrafas = garrafas.reversed;
+    var litrosGalao = 0.0;
+    var garrafasUtilizadas = [];
+    var sobra = 0.0;
 
-  var sortedGarrafas = garrafas.reversed;
-  var litrosGalao = 0.0;
-  var garrafasUtilizadas = [];
-  var sobra = 0.0;
-
-  for (var garrafa in sortedGarrafas) {
-    if (litrosGalao + garrafa <= total) {
-      litrosGalao += garrafa;
-      garrafasUtilizadas.add(garrafa);
-    }
-  }
-
-  if (litrosGalao != total) {
     for (var garrafa in sortedGarrafas) {
-      if (garrafasUtilizadas.contains(garrafa)) continue;
-      if (litrosGalao + garrafa > total) {
+      if (litrosGalao + garrafa <= total) {
         litrosGalao += garrafa;
-        sobra = litrosGalao - total;
         garrafasUtilizadas.add(garrafa);
-        break;
       }
     }
+
+    if (litrosGalao != total) {
+      for (var garrafa in sortedGarrafas) {
+        if (garrafasUtilizadas.contains(garrafa)) continue;
+        if (litrosGalao + garrafa > total) {
+          litrosGalao += garrafa;
+          sobra = litrosGalao - total;
+          garrafasUtilizadas.add(garrafa);
+          break;
+        }
+      }
+    }
+
+    return [garrafasUtilizadas, sobra];
   }
-
-  return [garrafasUtilizadas, sobra];
-}
-
-double getGalao() {
-  print('Insira os litros do galão: ');
-  return double.parse(stdin.readLineSync());
-}
-
-int getGarrafas() {
-  print('Insira a quantidade de garrafas: ');
-  return int.parse(stdin.readLineSync());
 }
