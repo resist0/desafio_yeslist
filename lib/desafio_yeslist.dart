@@ -25,6 +25,6 @@ class Challenge {
         }
       }
     }
-    return 'Garrafas Utilizadas: $garrafasUtilizadas\nSobra: $sobra';
+    return 'Garrafas Utilizadas: ${garrafasUtilizadas.length}\nVolumes: $garrafasUtilizadas\nSobra: $sobra';
   }
 }

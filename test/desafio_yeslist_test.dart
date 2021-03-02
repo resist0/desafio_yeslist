@@ -14,6 +14,6 @@ void main() {
 
   test('Should return correct values', () {
     expect(sut.tentarEncher(total, garrafas),
-        'Garrafas Utilizadas: [4.5, 1.5, 1]\n' 'Sobra: 0.0');
+        'Garrafas Utilizadas: 3\n' 'Volumes: [4.5, 1.5, 1]\n' 'Sobra: 0.0');
   });
 }
