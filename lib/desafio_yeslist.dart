@@ -1,5 +1,5 @@
 class Challenge {
-  List tentarEncher(int total, List garrafas) {
+  String tentarEncher(int total, List garrafas) {
     garrafas.sort();
 
     var sortedGarrafas = garrafas.reversed;
@@ -25,7 +25,6 @@ class Challenge {
         }
       }
     }
-
-    return [garrafasUtilizadas, sobra];
+    return 'Garrafas Utilizadas: $garrafasUtilizadas\nSobra: $sobra';
   }
 }
